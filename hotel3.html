@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Travel.com/hotel</title>
+
+	<link href="css/main.css" rel="stylesheet">
+	<link href="css/font-awesome.css" rel="stylesheet">
+	<link href="css/animate.css" rel="stylesheet">
+	<link href="css/jquery.bxslider.min.css" rel="stylesheet">
+	<link href="css/bootstrap.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/dark-hive/jquery-ui.css">
+	<link href="css/owl.carousel.css" rel="stylesheet">
+	<link href="css/owl.theme.default.css" rel="stylesheet">
+	<link href="themes/fontawesome-stars-o.css" rel="stylesheet">
+	<link href="themes/examples.css" rel="stylesheet">
+	<link href="themes/css-stars.css" rel="stylesheet">
+	
+	<style>
+	    
+	   #tabs{
+	    margin-top: 100px;
+		border-top: 7px solid #AC4147;
+		border-radius: 0px;
+		position: relative;
+		margin-bottom: 70px;
+		opacity: .9;
+	   }
+	   #tabs ul{
+	    background: none;
+		border: none;
+		margin-top: -60px;
+		margin-left: -6px;
+	   }
+	   .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-button, html .ui-button.ui-state-disabled:hover, html .ui-button.ui-state-disabled:active{
+	    background:#000;
+		border:none;
+		border-radius:0px;
+		opacity: .8;
+	   }
+	  .ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active, a.ui-button:active, .ui-button:active, .ui-button.ui-state-active:hover{
+	    order: none;
+		border-bottom-width: medium;
+		background: #AC4147;
+		font-weight: normal;
+		color: #ffffff;
+		opactiy:1;
+		opacity: 1.9;
+	  }
+	   #tabs ul li a:hover{
+	    color:#fff;
+	   }
+	   #tabs ul li a{
+	    padding: 13px 13px;
+	   }
+	   	main-ui-tabs{
+		border-top: 6px solid #AC4147;
+		border-radius:0px;
+		background:red;
+	  }
+	  .ui-widget{
+			font-family: 'Lato', sans-serif;
+		}
+	  .ui-datepicker-header{
+	   background:#000;
+	  }
+	  .ui-widget input, .ui-widget select, .ui-widget textarea, .ui-widget button{
+	    font-family: 'Lato', sans-serif;
+	  }
+	  .current-rating{
+	    float: right;
+		position: absolute;
+		margin-left: 37%;
+		margin-top: -30px;
+		background: #4dba4d;
+		color: #fff;
+		padding: 4px 5px;
+		border-radius: 4px;
+	  }
+	  .title{
+	    float: right;
+		position: absolute;
+		margin-left: 37%;
+		margin-top: -30px;
+		background: #4dba4d;
+		color: #fff;
+		padding: 4px 5px;
+		border-radius: 4px;
+	  }
+	 .checked {
+      color: orange;
+    }
+	  .ui-tooltip, .arrow:after {
+    background: black;
+    border: 2px solid white;
+  }
+  .ui-tooltip {
+    padding: 10px 20px;
+    color: white;
+    border-radius: 5px;
+    font: bold 14px "Helvetica Neue", Sans-Serif;
+    text-transform: uppercase;
+    box-shadow: 0 0 7px black;
+  }
+  .arrow {
+    width: 70px;
+    height: 16px;
+    overflow: hidden;
+    position: absolute;
+    left: 50%;
+    margin-left: -35px;
+    bottom: -16px;
+  }
+  .arrow.top {
+    top: -16px;
+    bottom: auto;
+  }
+  .arrow.left {
+    left: 20%;
+  }
+  .arrow:after {
+    content: "";
+    position: absolute;
+    left: 20px;
+    top: -20px;
+    width: 25px;
+    height: 25px;
+    box-shadow: 6px 5px 9px -9px black;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  .arrow.top:after {
+    bottom: -20px;
+    top: auto;
+  }
+	  
+	</style>
+	
+</head>
+<body>
+  <!-- start header section -->
+  <header>
+	 <div id="particles-js" class="hotel-head">
+	  <!--top nav-->
+		<div class="container" id="nav-con">
+		   <div class="main-nav">
+		    <nav class="navbar navbar-default">
+			  <div class="container-fluid">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+				  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				  </button>
+				  <div class="main-logo">
+					<a class="navbar-brand" href="#">TRAVEL</a>
+				  </div>
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				  <ul class="nav navbar-nav">
+				   
+				  </ul>
+				  <form class="navbar-form navbar-left">
+					<div class="form-group">
+					</div>
+				  </form>
+				  <ul class="nav navbar-nav navbar-right">
+					<li class=""><a href="index.html"><i class="fa fa-home" aria-hidden="true"></i>&nbsp;HOME</a></li>
+					<li><a href="flights.html"><i class="fa fa-plane" aria-hidden="true"></i>&nbsp;FLIGHTS</a></li>
+					<li class="active"><a href="hotel.html"><i class="fa fa-building" aria-hidden="true"></i>&nbsp;HOTELS</a></li>
+					<li><a href="holidays.html"><i class="fa fa-gift" aria-hidden="true"></i>&nbsp;HOLIDAY</a></li>
+					<li><a href="blog.html"><i class="fa fa-pencil" aria-hidden="true"></i>&nbsp;BLOG</a></li>
+					<li><a href="#"><i class="fa fa-phone" aria-hidden="true"></i>&nbsp;+880-1627402376</a></li>
+				  </ul>
+				</div><!-- /.navbar-collapse -->
+			  </div><!-- /.container-fluid -->
+			</nav>
+		  </div>
+		</div>
+		<!-- end top nav -->
+		<!-- main headline -->
+		<div class="main-headline wow animate bounceIn" data-wow-duration="1.8s">
+		 <h1>53 Hotels Found</h1>
+		 <p><i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp;Shylet, Bangladesh</p>
+		</div><!-- end main headline -->
+	</div>
+  </header><!-- end header section -->
+  
+  <!-- start hotel list section --->
+  <section class="hotel-list">
+    <div class="container">
+	 <div class="row">
+        <div class="col-md-3 col-sm-3">
+		  <div class="hotel-list-left">
+		  
+		     <div class="hotel-left-border">
+			  <div class="modify-search">
+			   <button class="hotel-list-left-btn wow animate slideInLeft"data-wow-duration="2s"><i class="fa fa-caret-down" aria-hidden="true"></i><i class="fa fa-caret-right" aria-hidden="true"></i>&nbsp;&nbsp;modify search result</button>
+			 </div>
+			 <div class="modify-search-dropdown">
+			    <p>loaction *</p>
+				<input type="text"placeholder="Spain"class="modify-src" title="Where will you visit?">
+				<p>Departure *</p>
+				<input type="text"placeholder="mm/dd/yy" class="modify-src sm-form-control2">
+				<p>arrival *</p>
+				<input type="text"placeholder="mm/dd/yy" class="modify-src sm-form-control2">
+				<div class="row">
+				 <div class="col-md-6 col-sm-6 col-xs-6">
+				 <p>ADULTS *</p>
+				    <select class="sm-form" name="currency">
+							<option value="en-US">1</option>
+							<option value="de-DE">2</option>
+							<option value="ja-JP">3</option>
+							<option value="ja-JP">4</option>
+						  </select>
+				 </div>
+				 <div class="col-md-6 col-sm-6 col-xs-6">
+				 <p>CHILDREN *</p>
+				    <select class="sm-form" name="currency">
+							<option value="en-US">1</option>
+							<option value="de-DE">2</option>
+							<option value="ja-JP">3</option>
+							<option value="ja-JP">4</option>
+						  </select>
+				 </div>
+				</div>
+				<button class="modify-dropdown-btn">search</button>
+			 </div>
+			 </div>
+			 <!-- hotel left price -->
+			 <div class="hotel-left-price">
+			    <h4>PRICE</h4>
+				<div class="check-div">
+				 <ul>
+				 <li>
+				   <div class="hotel-left-check">
+				    
+				   </div>
+				 </li>
+				 <li><p>$0-$49</p></li>
+				</ul>
+				</div><br><br>
+				<div class="check-div">
+				 <ul>
+				 <li>
+				   <div class="hotel-left-check"></div>
+				 </li>
+				 <li><p>$49-$99</p></li>
+				</ul>
+				</div><br><br>
+				<div class="check-div">
+				 <ul>
+				 <li>
+				   <div class="hotel-left-check"></div>
+				 </li>
+				 <li><p>$100-$129</p></li>
+				</ul>
+				</div><br><br>
+				<div class="check-div">
+				 <ul>
+				 <li>
+				   <div class="hotel-left-check"></div>
+				 </li>
+				 <li><p>$130-$200</p></li>
+				</ul>
+				</div><br><br>
+				</div>
+				
+				<div class="rating">
+				<h4 style="margin-bottom: 20px;">STAR RATING</h4>
+                <div class="stars stars-example-fontawesome-o">
+                <select id="example-fontawesome-o" name="rating" data-current-rating="5" autocomplete="off">
+                  <option value=""></option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  
+                </select>
+                <span class="title current-rating">
+                 Rating: <span class="value"></span>
+                </span>
+                <span class="title your-rating hidden">
+                  Your rating: <span class="value"></span>&nbsp;
+                  <a href="#" class="clear-rating"><i class="fa fa-times-circle"></i></a>
+                </span>
+              </div>
+			 </div>
+			 
+			 <div class="hotel-left-price" style="border:none;">
+			    <h4>AMENITIES</h4>
+				<div class="check-div">
+				 <ul>
+				 <li>
+				   <div class="hotel-left-check">
+				    
+				   </div>
+				 </li>
+				 <li><p>Air Conditioner</p></li>
+				</ul>
+				</div><br><br>
+				<div class="check-div">
+				 <ul>
+				 <li>
+				   <div class="hotel-left-check"></div>
+				 </li>
+				 <li><p>Bar</p></li>
+				</ul>
+				</div><br><br>
+				<div class="check-div">
+				 <ul>
+				 <li>
+				   <div class="hotel-left-check"></div>
+				 </li>
+				 <li><p>Swiming Pool</p></li>
+				</ul>
+				</div><br><br>
+				<div class="check-div">
+				 <ul>
+				 <li>
+				   <div class="hotel-left-check"></div>
+				 </li>
+				 <li><p>Gym</p></li>
+				</ul>
+				</div><br><br>
+				<div class="check-div">
+				 <ul>
+				 <li>
+				   <div class="hotel-left-check"></div>
+				 </li>
+				 <li><p>Restaurant</p></li>
+				</ul>
+				</div><br><br>
+				<div class="check-div">
+				 <ul>
+				 <li>
+				   <div class="hotel-left-check"></div>
+				 </li>
+				 <li><p>Cafe</p></li>
+				</ul>
+				</div><br><br>
+				<div class="check-div">
+				 <ul>
+				 <li>
+				   <div class="hotel-left-check"></div>
+				 </li>
+				 <li><p>Wifi</p></li>
+				</ul>
+				</div><br><br>
+				<div class="check-div">
+				 <ul>
+				 <li>
+				   <div class="hotel-left-check"></div>
+				 </li>
+				 <li><p>Parking</p></li>
+				</ul>
+				</div><br><br>
+				<div class="check-div">
+				 <ul>
+				 <li>
+				   <div class="hotel-left-check"></div>
+				 </li>
+				 <li><p>24HRS Check-in</p></li>
+				</ul>
+				</div><br><br>
+			 </div>
+			 
+		  </div><!-- end left option -->
+		</div>
+        <div class="col-md-9 col-sm-9">
+		 <div class="hotel-list-right">
+		 
+            <div class="first-hotel wow animate bounceIn" data-wow-duration="2s" style="animation-delay:1s">
+			 <div class="row">
+			 <div class="col-md-4 col-sm-4">
+			    <img src="image/29.jpg">
+			 </div>
+			 <div class="col-md-6 col-sm-6">
+			    <h2>Britannia Hotel</h2>
+				<table>
+				  <tr>
+				    <td>
+				        <span class="fa fa-star checked"></span>
+						<span class="fa fa-star checked"></span>
+						<span class="fa fa-star checked"></span>
+						<span class="fa fa-star checked"></span>
+						<span class="fa fa-star checked"></span>
+					&nbsp;&nbsp;/
+					</td>
+				    <td>
+					  <p class="map-p"><i class="fa fa-map-o" aria-hidden="true"></i>&nbsp; View Map &nbsp; / </p>
+					</td>
+				    <td>
+					 <p>&nbsp;<i class="fa fa-comments-o" aria-hidden="true"></i>&nbsp;24 Reviews</p>
+					</td>
+				  </tr>
+				</table>
+				<ul>
+				  <li><i class="fa fa-wifi" aria-hidden="true" title="wifi"></i></li>
+				  <li style="background:#d1d1d1;"><i class="fa fa-glass" aria-hidden="true" title="Bar not Avilable"></i></li>
+				  <li><i class="fa fa-random" aria-hidden="true" title="A/C"></i></li>
+				  <li><i class="fa fa-cutlery" aria-hidden="true" title="Resturant"></i></li>
+				  <li style="background:#d1d1d1;"><i class="fa fa-arrows-h" aria-hidden="true" title="GYM not Avilable"></i></li>
+				  <li><i class="fa fa-bell" aria-hidden="true" title="Room Service"></i></li>
+				  <li><i class="fa fa-coffee" aria-hidden="true" title="Cafe"></i></li>
+				</ul>
+				<p class="hotel-title">
+				 Shahjalal Road, Ambarkhana Point, Sylhet, 3100 Bangladesh
+                </p>
+			 </div>
+			 <div class="col-md-2 col-sm-2">
+			    <h1>$128.50</h1>
+				<h5>Price per Night</h5>
+				<button class="hotel-right-btn">book now</button>
+			  </div>
+			 </div>
+			</div>
+			
+			<div class="first-hotel wow animate bounceIn" data-wow-duration="2s" style="animation-delay:1s">
+			 <div class="row">
+			 <div class="col-md-4 col-sm-4">
+			    <img src="image/30.jpg">
+			 </div>
+			 <div class="col-md-6 col-sm-6">
+			    <h2>Hotel Noorjahan Grand</h2>
+				<table>
+				  <tr>
+				    <td>
+				        <span class="fa fa-star checked"></span>
+						<span class="fa fa-star checked"></span>
+						<span class="fa fa-star checked"></span>
+						<span class="fa fa-star checked"></span>
+						<span class="fa fa-star checked"></span>&nbsp;&nbsp;/
+					</td>
+				    <td>
+					  <p><i class="fa fa-map-o" aria-hidden="true"></i>&nbsp; View Map &nbsp; / </p>
+					</td>
+				    <td>
+					 <p>&nbsp;<i class="fa fa-comments-o" aria-hidden="true"></i>&nbsp;24 Reviews</p>
+					</td>
+				  </tr>
+				</table>
+				<ul>
+				  <li style="background:#d1d1d1;"><i class="fa fa-wifi" aria-hidden="true" title="wifi not avilable"></i></li>
+				  <li><i class="fa fa-glass" aria-hidden="true" title="Bar"></i></li>
+				  <li><i class="fa fa-random" aria-hidden="true" title="A/C"></i></li>
+				  <li><i class="fa fa-cutlery" aria-hidden="true" title="Resturant"></i></li>
+				  <li><i class="fa fa-arrows-h" aria-hidden="true" title="GYM"></i></li>
+				  <li><i class="fa fa-bell" aria-hidden="true" title="Room Service"></i></li>
+				  <li><i class="fa fa-coffee" aria-hidden="true" title="Cafe"></i></li>
+				</ul>
+				<p class="hotel-title">
+				 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta sequi nemo asperiores. Debitis inventore veritatis quas omnis error.
+                </p>
+			 </div>
+			 <div class="col-md-2 col-sm-2">
+			    <h1>$72.50</h1>
+				<h5>Price per Night</h5>
+				<button class="hotel-right-btn">book now</button>
+			  </div>
+			 </div>
+			</div>
+			
+			<div class="first-hotel wow animate bounceIn" data-wow-duration="2s" style="animation-delay:1s">
+			 <div class="row">
+			 <div class="col-md-4 col-sm-4">
+			    <img src="image/31.jpg">
+			 </div>
+			 <div class="col-md-6 col-sm-6">
+			    <h2>Accommodation Hotel</h2>
+				<table>
+				  <tr>
+				    <td>
+				        <span class="fa fa-star checked"></span>
+						<span class="fa fa-star checked"></span>
+						<span class="fa fa-star checked"></span>
+						<span class="fa fa-star checked"></span>
+						<span class="fa fa-star checked"></span>&nbsp;&nbsp;/
+					</td>
+				    <td>
+					  <p><i class="fa fa-map-o" aria-hidden="true"></i>&nbsp; View Map &nbsp; / </p>
+					</td>
+				    <td>
+					 <p>&nbsp;<i class="fa fa-comments-o" aria-hidden="true"></i>&nbsp;24 Reviews</p>
+					</td>
+				  </tr>
+				</table>
+				<ul>
+				  <li><i class="fa fa-wifi" aria-hidden="true" title="wifi"></i></li>
+				  <li><i class="fa fa-glass" aria-hidden="true" title="Bar"></i></li>
+				  <li><i class="fa fa-random" aria-hidden="true" title="A/C"></i></li>
+				  <li><i class="fa fa-cutlery" aria-hidden="true" title="Resturant"></i></li>
+				  <li><i class="fa fa-arrows-h" aria-hidden="true" title="GYM"></i></li>
+				  <li><i class="fa fa-bell" aria-hidden="true" title="Room Service"></i></li>
+				  <li><i class="fa fa-coffee" aria-hidden="true" title="Cafe"></i></li>
+				</ul>
+				<p class="hotel-title">
+				 Waves 1, Ritz Tower, Dargah Gate, Sylhet, 3100 Bangladesh
+                </p>
+			 </div>
+			 <div class="col-md-2 col-sm-2">
+			    <h1>$190.99</h1>
+				<h5>Price per Night</h5>
+				<button class="hotel-right-btn">book now</button>
+			  </div>
+			 </div>
+			</div>
+			
+			<div class="first-hotel wow animate bounceIn" data-wow-duration="2s" style="animation-delay:1s">
+			 <div class="row">
+			 <div class="col-md-4 col-sm-4">
+			    <img src="image/32.jpg">
+			 </div>
+			 <div class="col-md-6 col-sm-6">
+			    <h2>La Rose Hotel</h2>
+				<table>
+				  <tr>
+				    <td>
+				        <span class="fa fa-star checked"></span>
+						<span class="fa fa-star checked"></span>
+						<span class="fa fa-star checked"></span>
+						<span class="fa fa-star checked"></span>
+						<span class="fa fa-star"></span>&nbsp;&nbsp;/
+					</td>
+				    <td>
+					  <p><i class="fa fa-map-o" aria-hidden="true"></i>&nbsp; View Map &nbsp; / </p>
+					</td>
+				    <td>
+					 <p>&nbsp;<i class="fa fa-comments-o" aria-hidden="true"></i>&nbsp;24 Reviews</p>
+					</td>
+				  </tr>
+				</table>
+				<ul>
+				  <li><i class="fa fa-wifi" aria-hidden="true" title="wifi"></i></li>
+				  <li><i class="fa fa-glass" aria-hidden="true" title="Bar"></i></li>
+				  <li><i class="fa fa-random" aria-hidden="true" title="A/C"></i></li>
+				  <li><i class="fa fa-cutlery" aria-hidden="true" title="Resturant"></i></li>
+				  <li style="background:#d1d1d1;"><i class="fa fa-arrows-h" aria-hidden="true" title="GYM not Avilable"></i></li>
+				  <li><i class="fa fa-bell" aria-hidden="true" title="Room Service"></i></li>
+				  <li><i class="fa fa-coffee" aria-hidden="true" title="Cafe"></i></li>
+				</ul>
+				<p class="hotel-title">
+				 16-Ornob, Mirer Moidan Point , Police Line Road, West Dorga Gate, Sylhet, 3100 Bangladesh
+                </p>
+			 </div>
+			 <div class="col-md-2 col-sm-2">
+			    <h1>$45.00</h1>
+				<h5>Price per Night</h5>
+				<button class="hotel-right-btn">book now</button>
+			  </div>
+			 </div>
+			</div>
+			
+			<div class="next-page">
+			  <ul>
+			    <li><a href="hotel2.html"><i class="fa fa-chevron-left" aria-hidden="true"></i></a></li>
+			    <li><a href="hotel.html">1</a></li>
+			    <li><a href="hotel2.html">2</a></li>
+			    <li style="background:#AC4147;"><a href="hotel3.html"style="color:#fff;">3</a></li>
+			    <li><a href="hotel4.html">4</a></li>
+			    <li><a href="hotel4.html"><i class="fa fa-chevron-right" aria-hidden="true"></i></a></li>
+			  </ul>
+			</div>
+			
+			
+		 </div>
+		</div>
+	 </div>
+	</div>
+  </section><!-- end hotel list section --->
+  
+  
+  <!-- start footer section -->
+  <section class="footer">
+    <div class="container">
+	 <div class="row">
+	  <div class="col-md-4 col-sm-12">
+	    <div class="footer-txt">
+		 <p>call us :</p>
+		 <h2>(91) 22 84551445 </h2>
+		 <p>Send an Enquiry:</p>
+		 <h2>travel@canvas.com </h2>
+		 <div class="row">
+		   <div class="col-md-6 col-sm-6">
+		     <div class="ficon">
+			    <ul class="footer-ul">
+				  <li class="icon">
+				    <i class="fa fa-facebook" aria-hidden="true"></i>
+			        <i class="fa fa-facebook" aria-hidden="true"></i>
+				  </li>
+				  <li><a href="#">Like us <br>on Facebook</a></li>
+				</ul>
+			 </div>
+		   </div>
+		   <div class="col-md-6 col-sm-6">
+		     <div class="ficon">
+			    <ul class="footer-ul">
+				  <li class="icon" id="rss">
+				    <i class="fa fa-rss" aria-hidden="true"></i>
+			        <i class="fa fa-rss" aria-hidden="true"></i>
+				  </li>
+				  <li><a href="#">Subscribe <br> to RSS Feeds</a></li>
+				</ul>
+			 </div>
+		   </div>
+		 </div>
+		</div>
+	  </div>
+	  <div class="col-md-4 col-sm-6">
+	    <div class="footer-txt" id="fpackage">
+		 <h3>Featured Packages</h3>
+		 <div class="footerp">
+		   <div class="row">
+		  <div class="col-md-3 col-sm-3 col-xs-3">
+		    <img src="image/17.jpg">
+		  </div>
+		  <div class="col-md-9 col-sm-9 col-xs-9">
+		    <h4><a href="#">7 Nights/8 Days Europe</a></h4>
+			<p>$599 onwards</p>
+		  </div>
+		 </div>
+		 </div>
+		 
+		<div class="footerp">
+		  <div class="row">
+		  <div class="col-md-3 col-sm-3 col-xs-3">
+		    <img src="image/18.jpg">
+		  </div>
+		  <div class="col-md-9 col-sm-9 col-xs-9">
+		    <h4><a href="#">4 Nights/5 Days Thailand</a></h4>
+			<p>$399 onwards</p>
+		  </div>
+		 </div>
+		</div>
+		 
+		 <div class="footerp" style="border:none;">
+		   <div class="row">
+		  <div class="col-md-3 col-sm-3 col-xs-3">
+		    <img src="image/19.jpg">
+		  </div>
+		  <div class="col-md-9 col-sm-9 col-xs-9">
+		    <h4><a href="#">11 Nights/12 Days America</a></h4>
+			<p>$1299 onwards</p>
+		  </div> 
+		 </div>
+		 </div>
+	</div>
+	</div>
+	<div class="col-md-4 col-sm-6">
+	  <div class="footer-txt">
+	    <h3>Popular Destinations</h3>
+		<div class="row">
+		 <div class="col-md-6 col-sm-6 col-xs-6">
+		   <div class="destination">
+		    <p><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>&nbsp;Thailand</a></p>
+		    <p><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>&nbsp;Indonesia</a></p>
+		    <p><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>&nbsp;Italy</a></p>
+		    <p><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>&nbsp;Spain</a></p>
+		   </div>
+		   </div>
+		<div class="col-md-6 col-sm-6 col-xs-6">
+		 <div class="destination">
+		    <p><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>&nbsp;France</a></p>
+		    <p><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>&nbsp;Bangladesh</a></p>
+		    <p><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>&nbsp;Philippines</a></p>
+		    <p><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>&nbsp;New Zealand</a></p>
+		   </div>
+		   </div>
+         </div>
+		 <h4 class="get-latest">Get Latest <span>Offers</span> & <span>Coupons</span> by Email:</h4>
+		 <form>
+		    <table>
+			 <td><button class="footer-txt-btn" style="cursor: auto;"><i class="fa fa-paper-plane-o" aria-hidden="true"></i></button></td>
+			 <td><input type="text" placeholder="Enter your Email" class="footer-txt-src"></td>
+			 <td><button class="footer-txt-btn" id="suscribe">Subscribe</button></td>
+			</table>
+		 </form>
+		</div>
+	  </div>
+	</div>
+  </section><!-- end footer section -->
+  
+  <!-- start footer-bottom section -->
+  <section class="footer-bottom">
+    <div class="container">
+	 <div class="row">
+	    <div class="col-md-6 col-sm-6">
+		 <div class="footer-bottom-txt">
+		   <p>Copyrights &copy; 2017 All Rights Reserved by Travel Inc.</p>
+		   <p><a href="#">Terms of Use</a>/<a href="#" style="margin-left:15px;">Privacy Policy</a></p>
+		 </div>
+		</div>
+	    <div class="col-md-6 col-sm-6">
+		 <div class="footer-bottom-icon">
+		    <ul>
+			  <li class="facebook"><a href="#">
+			  <i class="fa fa-facebook" aria-hidden="true"></i>
+			  <i class="fa fa-facebook" aria-hidden="true"></i>
+			  </a></li>
+			  <li class="twitter"><a href="#">
+			  <i class="fa fa-twitter" aria-hidden="true"></i>
+			  <i class="fa fa-twitter" aria-hidden="true"></i>
+			  </a></li>
+			  <li class="gplus"><a href="#">
+			  <i class="fa fa-google-plus" aria-hidden="true"></i>
+			  <i class="fa fa-google-plus" aria-hidden="true"></i>
+			  </a></li>
+			  <li class="vimeo"><a href="#">
+			  <i class="fa fa-vimeo" aria-hidden="true"></i>
+			  <i class="fa fa-vimeo" aria-hidden="true"></i>
+			  </a></li>
+			  <li class="pinterest"><a href="#">
+			  <i class="fa fa-pinterest-p" aria-hidden="true"></i>
+			  <i class="fa fa-pinterest-p" aria-hidden="true"></i>
+			  </a></li>
+			  <li class="git"><a href="#">
+			  <i class="fa fa-git" aria-hidden="true"></i>
+			  <i class="fa fa-git" aria-hidden="true"></i>
+			  </a></li>
+			  <li class="yahoo"><a href="#">
+			  <i class="fa fa-yahoo" aria-hidden="true"></i>
+			  <i class="fa fa-yahoo" aria-hidden="true"></i>
+			  </a></li>
+			  <li class="linkedin"><a href="#">
+			  <i class="fa fa-linkedin" aria-hidden="true"></i>
+			  <i class="fa fa-linkedin" aria-hidden="true"></i>
+			  </a></li>
+			</ul>
+		</div>
+		</div>
+	 </div>
+	</div>
+  </section>
+  
+ 
+  
+  
+  <div class="scroll-btn">
+    
+  </div>
+
+
+
+<!--js link-->
+
+	<script src="js/main.js"></script>
+	<script src="js/jquery.bxslider.min.js"></script>
+	<script src="js/jquery.easing.1.3.js"></script>
+	<script src="js/bootstrap.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+	<script src="js/wow.js"></script>
+	<script src="js/custom.js"></script>
+	<script src="http://maps.google.com/maps/api/js"></script>
+    <script src="js/gmaps.js"></script>
+	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+	<script src="js/owl.carousel.js"></script>
+	<script src="js/examples.js"></script>
+	<script src="js/jquery.barrating.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+	
+
+    
+	<script>
+     new WOW().init();
+	  particlesJS.load('particles-js', 'particles.json', function(){
+      console.log('particles.json loaded...');
+    });
+	 new WOW().init();
+    </script>
+</body>
+</html>	
